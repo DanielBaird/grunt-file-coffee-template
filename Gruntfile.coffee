@@ -15,8 +15,8 @@ module.exports = (grunt) ->
     clean: ['public/']
 
     # Compilation `.coffee` files from `dev/**` dir to `public/**` dir
-    # It does not adds function wrappers
-    # and creates `.map` sourcemap files. You should endble source map in Chrome
+    # It does not adds function wrappers, and creates `.map` sourcemap
+    # files. You should enable source map in Chrome
     coffee:
       options:
         bare: true
@@ -32,7 +32,7 @@ module.exports = (grunt) ->
     coffeelint:
       app: ['dev/**/*.coffee', '!**/vendor/**']
 
-    # Creates static server which serves foles from `.` folder on 8080 port.
+    # Creates static server which serves files from `.` folder on 8080 port.
     # Also on each file change it reloads page
     connect:
       server:
@@ -64,7 +64,7 @@ module.exports = (grunt) ->
         configFile: 'public/tests/karma-config.js'
         background: on
 
-    # Watch files and run tasks when any of this file was changed
+    # Watch files and run tasks when any of the files change
     regarde:
       html:
         files: ['index.html', 'dev/**/*.html', 'dev/**/*.hbs']
